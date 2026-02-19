@@ -1,0 +1,54 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configure Classeviva",
+        "description": "Enter credentials to access the Classeviva electronic register.",
+        "data": {
+          "student_id": "Student ID",
+          "password": "Password",
+          "student_name": "Student Name (optional)",
+          "scan_interval": "Update frequency (minutes)",
+          "calendar_name": "Calendar name (optional)",
+          "import_history": "Import grade history on first load (backfills past grades into entity history)"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Invalid credentials. Check student ID and password.",
+      "cannot_connect": "Unable to connect to Classeviva. Check your connection and try again.",
+      "unknown": "Unknown error during configuration."
+    },
+    "abort": {
+      "already_configured": "This student is already configured.",
+      "reauth_successful": "Authentication updated successfully."
+    }
+  },
+  "entity": {
+    "button": {
+      "refresh": { "name": "Refresh Data" }
+    },
+    "sensor": {
+      "media_generale": { "name": "Overall Average" },
+      "ultimo_voto": { "name": "Latest Grade" },
+      "assenze": { "name": "Absences" },
+      "ritardi": { "name": "Late Arrivals" },
+      "uscite_anticipate": { "name": "Early Departures" },
+      "compiti": { "name": "Pending Homework" },
+      "note": { "name": "Disciplinary Notes" },
+      "ultimo_aggiornamento": { "name": "Last Update" }
+    },
+    "calendar": {
+      "voti": { "name": "Grades Calendar" },
+      "assenze": { "name": "Absences Calendar" },
+      "compiti": { "name": "Homework Calendar" },
+      "note": { "name": "Notes Calendar" }
+    }
+  },
+  "services": {
+    "refresh_data": {
+      "name": "Refresh Data",
+      "description": "Force an immediate data refresh from the Classeviva register."
+    }
+  }
+}

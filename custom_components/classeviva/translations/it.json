@@ -1,0 +1,54 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configura Classeviva",
+        "description": "Inserisci le credenziali per accedere al registro elettronico Classeviva.",
+        "data": {
+          "student_id": "ID Studente",
+          "password": "Password",
+          "student_name": "Nome Studente (opzionale)",
+          "scan_interval": "Frequenza aggiornamento (minuti)",
+          "calendar_name": "Nome calendario (opzionale)",
+          "import_history": "Importa storico voti al primo avvio (inserisce i voti passati nello storico del sensore)"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Credenziali non valide. Verifica ID studente e password.",
+      "cannot_connect": "Impossibile connettersi a Classeviva. Controlla la connessione e riprova.",
+      "unknown": "Errore sconosciuto durante la configurazione."
+    },
+    "abort": {
+      "already_configured": "Questo studente è già configurato.",
+      "reauth_successful": "Autenticazione aggiornata con successo."
+    }
+  },
+  "entity": {
+    "button": {
+      "refresh": { "name": "Aggiorna Dati" }
+    },
+    "sensor": {
+      "media_generale": { "name": "Media Generale" },
+      "ultimo_voto": { "name": "Ultimo Voto" },
+      "assenze": { "name": "Assenze" },
+      "ritardi": { "name": "Ritardi" },
+      "uscite_anticipate": { "name": "Uscite Anticipate" },
+      "compiti": { "name": "Compiti da Fare" },
+      "note": { "name": "Note Disciplinari" },
+      "ultimo_aggiornamento": { "name": "Ultimo Aggiornamento" }
+    },
+    "calendar": {
+      "voti": { "name": "Calendario Voti" },
+      "assenze": { "name": "Calendario Assenze" },
+      "compiti": { "name": "Calendario Compiti" },
+      "note": { "name": "Calendario Note" }
+    }
+  },
+  "services": {
+    "refresh_data": {
+      "name": "Aggiorna Dati",
+      "description": "Forza un aggiornamento immediato dei dati dal registro Classeviva."
+    }
+  }
+}

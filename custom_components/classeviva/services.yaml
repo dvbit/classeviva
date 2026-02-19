@@ -1,0 +1,6 @@
+refresh_data:
+  name: Aggiorna Dati
+  description: Forza un aggiornamento immediato dei dati dal registro Classeviva.
+  target:
+    entity:
+      integration: classeviva

@@ -1,0 +1,12 @@
+{
+  "domain": "classeviva",
+  "name": "Classeviva Registro Elettronico",
+  "codeowners": ["@dvbit"],
+  "config_flow": true,
+  "documentation": "https://github.com/dvbit/ha-classeviva",
+  "issue_tracker": "https://github.com/dvbit/ha-classeviva/issues",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "requirements": ["requests>=2.28.0"],
+  "version": "2.0.0"
+}
