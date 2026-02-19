@@ -1,0 +1,16 @@
+name: HACS Action
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  hacs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: HACS Action
+        uses: hacs/action@main
+        with:
+          category: integration # Cambia in plugin, theme, ecc.
