@@ -6,7 +6,13 @@
 
 Integrazione per Home Assistant che permette di monitorare il registro elettronico **Classeviva** (Spaggiari) direttamente dalla tua dashboard.
 
-Supporta account **genitore (G)** e **studente (S)**.
+Supporta account **genitore (G)** 
+
+ATTENZIONE: Non mi assumo responsabilità riguardo alla potenziale perdiata di dati privato dovuta alla errata configurazione della vostra istanza homeassistant.
+
+Disclaimer: sviluppato mediante Claude Agent E il mio cervello per verificare e fargli fare esattamente quel che volevo controllando anche il codice.
+
+TODO: Custom Lovelace card
 
 ---
 
