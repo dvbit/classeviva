@@ -12,7 +12,7 @@ ATTENZIONE: Non mi assumo responsabilità riguardo alla potenziale perdiata di d
 
 Disclaimer: sviluppato mediante Claude Agent E il mio cervello per verificare e fargli fare esattamente quel che volevo controllando anche il codice.
 
-Se l'integrazione ti è utile e ti va mi puoi offire un caffè
+Se l'integrazione ti è utile e ti va mi puoi e vuoi offire un caffè :-)
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/D1D01UKQ5C)
 
