@@ -1,5 +1,7 @@
 # Classeviva per Home Assistant
 
+Un ringraziamento all'autore della libreria Python che c'è dietro, Matteo Marchese aka FLAK-ZOSO [https://github.com/FLAK-ZOSO] senza il suo lavoro questo non sarebbe stato possibile.
+
 [![HACS](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://hacs.xyz)
 [![GitHub Release](https://img.shields.io/github/v/release/dvbit/ha-classeviva)](https://github.com/dvbit/ha-classeviva/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
@@ -7,9 +9,6 @@
 Integrazione per Home Assistant che permette di monitorare il registro elettronico **Classeviva** (Spaggiari) direttamente dalla tua dashboard.
 
 Supporta account **genitore (G)** 
-
-
-Un ringraziamento all'autore della libreria Python che c'è dietro, Matteo Marchese aka FLAK-ZOSO [https://github.com/FLAK-ZOSO] senza il suo lavoro questo non sarebbe stato possibile.
 
 
 ATTENZIONE: Non mi assumo responsabilità riguardo alla potenziale perdiata di dati privato dovuta alla errata configurazione della vostra istanza homeassistant.
