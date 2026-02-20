@@ -8,6 +8,10 @@ Integrazione per Home Assistant che permette di monitorare il registro elettroni
 
 Supporta account **genitore (G)** 
 
+
+Un ringraziamento all'autore della libreria Python che c'è dietro, Matteo Marchese aka FLAK-ZOSO [https://github.com/FLAK-ZOSO] senza il suo lavoro questo non sarebbe stato possibile.
+
+
 ATTENZIONE: Non mi assumo responsabilità riguardo alla potenziale perdiata di dati privato dovuta alla errata configurazione della vostra istanza homeassistant.
 
 Disclaimer: sviluppato mediante Claude Agent E il mio cervello per verificare e fargli fare esattamente quel che volevo controllando anche il codice.
