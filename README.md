@@ -48,7 +48,7 @@ TODO: Custom Lovelace card
 
 1. Apri HACS in Home Assistant
 2. Vai su **Integrazioni** → clicca i tre puntini → **Repository personalizzati**
-3. Aggiungi `https://github.com/dvbit/ha-classeviva` come tipo **Integrazione**
+3. Aggiungi `https://github.com/dvbit/classeviva` come tipo **Integrazione**
 4. Cerca **Classeviva** e installalo
 5. Riavvia Home Assistant
 
