@@ -223,7 +223,7 @@ entities:
   - entity: calendar.classeviva_NOME_note
 ```
 
-### 6 - Esempio Notifica
+### 6 - Esempio Card Rissuntiva 
 
 ```yaml
 type: markdown
@@ -258,6 +258,20 @@ content: |
   | ⚠️ Note | {{ check(note) }} |
   | 🔄 Aggiornato | {{ as_timestamp(aggiorn) | timestamp_custom('%d/%m/%Y %H:%M', true) if aggiorn not in ['unknown','unavailable'] else 'N/A' }} |
 ---
+```
+
+### 6 - Esempio Contenuto per Notifica
+
+```yaml
+*Riepilogo NOME*
+
+*Assenze:* {{ states('sensor.classeviva_NOME_assenze') }}
+*Ultima assenza:* {% set d_ass = state_attr('sensor.classeviva_NOME_assenze', 'data') %}{{ as_timestamp(d_ass, 0) | timestamp_custom('%d-%m-%Y', true, 'N/D') if d_ass else 'N/D' }}
+*Ritardi:* {{ states('sensor.classeviva_NOME_ritardi') }}
+*Ultimo ritardo:* {% set d_rit = state_attr('sensor.classeviva_NOME_ritardi', 'data') %}{{ as_timestamp(d_rit, 0) | timestamp_custom('%d-%m-%Y', true, 'N/D') if d_rit else 'N/D' }}
+*Compiti:* {{ states('sensor.classeviva_NOME_compiti_da_fare') }}{% if states('sensor.classeviva_NOME_compiti_da_fare') | int(0) > 0 %}
+*Data entro cui fare i compiti:* {% set d_comp = state_attr('sensor.classeviva_NOME_compiti_da_fare', 'data') %}{{ as_timestamp(d_comp, 0) | timestamp_custom('%d-%m-%Y', true, 'N/D') if d_comp else 'N/D' }}
+*Quali compiti:* {{ state_attr('sensor.classeviva_NOME_compiti_da_fare', 'descrizione') }}{% endif %}
 ```
 
 ## Automazioni di esempio
