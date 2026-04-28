@@ -92,7 +92,7 @@ Dopo la configurazione (dove `NOME` è il nome studente impostato, in minuscolo)
 | `sensor.classeviva_NOME_assenze` | Conteggio (int) | `data`, `giustificata`, `motivo` |
 | `sensor.classeviva_NOME_ritardi` | Conteggio (int) | `data`, `giustificata` |
 | `sensor.classeviva_NOME_uscite_anticipate` | Conteggio (int) | `data`, `giustificata` |
-| `sensor.classeviva_NOME_compiti` | Compiti futuri (int) | `data`, `materia`, `descrizione`, `autore` |
+| `sensor.classeviva_NOME_compiti_da_fare` | Compiti futuri (int) | `data`, `materia`, `descrizione`, `autore` |
 | `sensor.classeviva_NOME_note` | Conteggio (int) | `data`, `testo`, `autore`, `letta` |
 | `sensor.classeviva_NOME_ultimo_aggiornamento` | Timestamp ISO | — |
 
@@ -223,7 +223,42 @@ entities:
   - entity: calendar.classeviva_NOME_note
 ```
 
+### 6 - Esempio Notifica
+
+```yaml
+type: markdown
+title: "Riepilogo Classeviva NOME"
+content: |
+  {% set media = states('sensor.classeviva_NOME_media_generale') %}
+  {% set ultimo = states('sensor.classeviva_NOME_ultimo_voto') %}
+  {% set materia_ultimo = state_attr('sensor.classeviva_NOME_ultimo_voto', 'materia') %}
+  {% set assenze = states('sensor.classeviva_NOME_assenze') %}
+  {% set d_ass = state_attr('sensor.classeviva_NOME_assenze', 'data') %}
+  {% set ritardi = states('sensor.classeviva_NOME_ritardi') %}
+  {% set d_rit = state_attr('sensor.classeviva_NOME_ritardi', 'data') %}
+  {% set uscite = states('sensor.classeviva_NOME_uscite_anticipate') %}
+  {% set compiti = states('sensor.classeviva_NOME_compiti_da_fare') %}
+  {% set d_comp = state_attr('sensor.classeviva_NOME_compiti_da_fare', 'data') %}
+  {% set desc_comp = state_attr('sensor.classeviva_NOME_compiti_da_fare', 'description') %}
+  {% set note = states('sensor.classeviva_NOME_note') %}
+  {% set aggiorn = states('sensor.classeviva_NOME_ultimo_aggiornamento') %}
+  
+  {%- macro check(val) -%}
+  {{ 'N/A' if val in ['unknown', 'unavailable', 'None', ''] else val }}
+  {%- endmacro -%}
+  
+  | | |
+  |---|---|
+  | 📊 Media Generale | **{{ check(media) }}** |
+  | 📝 Ultimo Voto | **{{ check(ultimo) }}**{% if materia_ultimo %} — {{ materia_ultimo }}{% endif %} |
+  | 🚫 Assenze | {{ check(assenze) }}{% if d_ass %} <br> *Ultima: {{ as_timestamp(d_ass, 0) | timestamp_custom('%d-%m-%Y', true) }}*{% endif %} |
+  | ⏰ Ritardi | {{ check(ritardi) }}{% if d_rit %} <br> *Ultimo: {{ as_timestamp(d_rit, 0) | timestamp_custom('%d-%m-%Y', true) }}*{% endif %} |
+  | 🚪 Uscite | {{ check(uscite) }} |
+  | 📚 Compiti | {{ check(compiti) }}{% if compiti | int(0) > 0 and desc_comp %} <br> *Entro il {{ as_timestamp(d_comp, 0) | timestamp_custom('%d-%m-%Y', true) }}: {{ desc_comp }}*{% endif %} |
+  | ⚠️ Note | {{ check(note) }} |
+  | 🔄 Aggiornato | {{ as_timestamp(aggiorn) | timestamp_custom('%d/%m/%Y %H:%M', true) if aggiorn not in ['unknown','unavailable'] else 'N/A' }} |
 ---
+```
 
 ## Automazioni di esempio
 
